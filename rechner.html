@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<title>Mein eigener Rechner</title>
+<body style="background-color:rgb(147, 244, 255);">
+
+<p style="color:rgb(0, 1, 0); font-size:20px;">Hallo, Ich bin Lukas</p>
+<p style="color:rgb(0, 0, 0); font-size:12px;">Ich bin 14 jahre alt und mache ein Schulisches Praktikum bei Nokia.</p>
+<p style="color:rgb(0, 0, 0); font-size:15px;">Das hier ist mein selbst programmierter Taschenrechner</p>
+
+<p style="color:rgb(0, 1, 0); font-size:25px;">Der Lukalculator</p>
+  
+<p style="color:rgb(0, 1, 0); font-size:17px;">Indem du den Berechne button drückst berechnst du die 2 Zahlen</p>
+<input id="n1"><br>
+<input id="n2"><br>
+
+<button type="button" onclick="myFunction(operator = 'addieren')">+</button>
+<button type="button" onclick="myFunction(operator = 'subtrahieren')">-</button>
+<button type="button" onclick="myFunction(operator = 'multiplizieren')">*</button>
+<button type="button" onclick="myFunction(operator = 'dividieren')">/</button>
+
+<p id="erg"></p>
+
+<script>
+function myFunction(operator) {
+  // Get the value of the input field with id="numb"
+  let n1 = document.getElementById("n1").value;
+  let n2 = document.getElementById("n2").value;
+  // If x is Not a Number or less than one or greater than 10
+  let text;
+  if (isNaN(n1) || isNaN(n2)) {
+    text = "Ungültige Zahl!";
+  } else {
+    if (operator == "addieren") {
+      text = Number(n1) + Number(n2);
+    } else if (operator == "subtrahieren") {
+      text = Number(n1) - Number(n2);
+    } else if (operator == "multiplizieren") {
+      text = Number(n1) * Number(n2);
+    } else if (operator == "dividieren") {
+      text = Number(n1) / Number(n2);
+    } else {
+      text = "Ungültige Eingabe";
+    }    
+  }
+  document.getElementById("erg").innerHTML = text;
+}
+</script>
+</body>
+</html>
+
