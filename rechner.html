@@ -13,12 +13,18 @@
 <input id="n1"><br>
 <input id="n2"><br>
 
+
 <button type="button" onclick="myFunction(operator = 'addieren')">+</button>
 <button type="button" onclick="myFunction(operator = 'subtrahieren')">-</button>
 <button type="button" onclick="myFunction(operator = 'multiplizieren')">*</button>
 <button type="button" onclick="myFunction(operator = 'dividieren')">/</button>
+<p id="erg">Ergebnis =</p>
 
-<p id="erg"></p>
+<button type="button" onclick="myFunction(operator = 'quadratzahl')">x²</button>
+<button type="button" onclick="myFunction(operator = 'quadratzahl')">x³</button>
+
+
+
 
 <script>
 function myFunction(operator) {
@@ -40,9 +46,9 @@ function myFunction(operator) {
       text = Number(n1) / Number(n2);
     } else {
       text = "Ungültige Eingabe!!";
-    }    
+    }
   }
-  document.getElementById("erg").innerHTML = text;
+  document.getElementById("erg").innerHTML = "Ergebnis = " + text;
 }
 </script>
 </body>
