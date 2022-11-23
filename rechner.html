@@ -22,7 +22,8 @@
 
 <input id="n3"><br>
 <button type="button" onclick="myFunction_quadrat(operator = 'quadratzahl')">x²</button>
-<button type="button" onclick="myFunction_quadrat(operator = 'quadratzahl')">x³</button>
+<button type="button" onclick="myFunction_quadrat(operator = 'quadratzahl1')">x³</button>
+<button type="button" onclick="myFunction_quadrat(operator = 'wurzel')">√</button>
 <p id="erg_quadrat">Ergebnis =</p>
 
 
@@ -36,17 +37,16 @@ function myFunction_quadrat(operator) {
   if (isNaN(n1)) {
     text = "Ungültige Zahl!";
   } else {
-    if (operator == "addieren") {
-      text = Number(n1) + Number(n2);
-    } else if (operator == "subtrahieren") {
-      text = Number(n1) - Number(n2);
-    } else if (operator == "multiplizieren") {
-      text = Number(n1) * Number(n2);
-    } else if (operator == "dividieren") {
-      text = Number(n1) / Number(n2);
+    if (operator == "quadratzahl") {
+      text = Number(n1) * Number(n1);
+   
+    } else if (operator == "quadratzahl1") {
+      text = Number(n1) * Number(n1) * Number(n1);
+    } else if (operator == "wurzel") {
+      text = Math.sqrt(n1);
     } else {
       text = "Ungültige Eingabe!!";
-    }
+     }
   }
   document.getElementById("erg_quadrat").innerHTML = "Ergebnis = " + text;
 }
@@ -71,6 +71,7 @@ function myFunction(operator) {
     } else {
       text = "Ungültige Eingabe!!";
     }
+    
   }
   document.getElementById("erg").innerHTML = "Ergebnis = " + text;
 }
