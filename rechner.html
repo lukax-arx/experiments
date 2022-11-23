@@ -20,20 +20,20 @@
 <button type="button" onclick="myFunction(operator = 'dividieren')">/</button>
 <p id="erg">Ergebnis =</p>
 
+<input id="n3"><br>
 <button type="button" onclick="myFunction_quadrat(operator = 'quadratzahl')">x²</button>
 <button type="button" onclick="myFunction_quadrat(operator = 'quadratzahl')">x³</button>
-
+<p id="erg_quadrat">Ergebnis =</p>
 
 
 
 <script>
 function myFunction_quadrat(operator) {
   // Get the value of the input field with id="numb"
-  let n1 = document.getElementById("n1").value;
-  let n2 = document.getElementById("n2").value;
+  let n1 = document.getElementById("n3").value;
   // If x is Not a Number or less than one or greater than 10
   let text;
-  if (isNaN(n1) || isNaN(n2)) {
+  if (isNaN(n1)) {
     text = "Ungültige Zahl!";
   } else {
     if (operator == "addieren") {
@@ -48,7 +48,7 @@ function myFunction_quadrat(operator) {
       text = "Ungültige Eingabe!!";
     }
   }
-  document.getElementById("erg").innerHTML = "Ergebnis = " + text;
+  document.getElementById("erg_quadrat").innerHTML = "Ergebnis = " + text;
 }
 
 function myFunction(operator) {
