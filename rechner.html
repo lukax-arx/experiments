@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <title>Mein eigener Rechner</title>
-<body style="background-color:rgb(147, 244, 255);">
+<body style="background-color:rgb(255, 255, 255);">
 
 <p style="color:rgb(0, 1, 0); font-size:20px;">Hallo, Ich bin Lukas</p>
 <p style="color:rgb(0, 0, 0); font-size:12px;">Ich bin 14 jahre alt und mache ein Schulisches Praktikum bei Nokia.</p>
@@ -9,26 +9,51 @@
 
 <p style="color:rgb(0, 1, 0); font-size:25px;">Der Lukalculator</p>
   
-<p style="color:rgb(0, 1, 0); font-size:17px;">Indem du den Berechne button drückst berechnst du die 2 Zahlen</p>
-<input id="n1"><br>
+<p style="color:rgb(0, 1, 0); font-size:17px;">Indem du den Berechne button drückst berechnst du die 2 Zahlen</p><br>
+<form>
+<aside>
+</aside>
+  <input id="n1"><br> 
 <input id="n2"><br>
+<input type="reset" value="Delete" onclick="clear_erg(erg_field = 'erg')"/>
+</form>
 
 
 <button type="button" onclick="myFunction(operator = 'addieren')">+</button>
 <button type="button" onclick="myFunction(operator = 'subtrahieren')">-</button>
 <button type="button" onclick="myFunction(operator = 'multiplizieren')">*</button>
 <button type="button" onclick="myFunction(operator = 'dividieren')">/</button>
-<p id="erg">Ergebnis =</p>
 
+
+<p id="erg">Ergebnis =</p> 
+
+
+<p>Wurzeln:</p> 
+
+<form>
 <input id="n3"><br>
+<input type="reset" value="Delete" onclick="clear_erg(erg_field = 'erg_quadrat')"/>
+</form>
+
 <button type="button" onclick="myFunction_quadrat(operator = 'quadratzahl')">x²</button>
 <button type="button" onclick="myFunction_quadrat(operator = 'quadratzahl1')">x³</button>
 <button type="button" onclick="myFunction_quadrat(operator = 'wurzel')">√</button>
+<button type="button" onclick="myFunction_quadrat(operator = 'wurzel3')">∛</button>
+
 <p id="erg_quadrat">Ergebnis =</p>
 
 
 
 <script>
+function clear_erg(erg_field) {
+  if (erg_field == "erg_quadrat") {
+    document.getElementById("erg_quadrat").innerHTML = "Ergebnis =";
+  }
+  if (erg_field == "erg") {
+    document.getElementById("erg").innerHTML = "Ergebnis =";
+  }
+}
+
 function myFunction_quadrat(operator) {
   // Get the value of the input field with id="numb"
   let n1 = document.getElementById("n3").value;
@@ -44,9 +69,11 @@ function myFunction_quadrat(operator) {
       text = Number(n1) * Number(n1) * Number(n1);
     } else if (operator == "wurzel") {
       text = Math.sqrt(n1);
+    } else if (operator == "wurzel3") {
+      text = Math.sqrt(Math.sqrt(n1));
     } else {
       text = "Ungültige Eingabe!!";
-     }
+    }
   }
   document.getElementById("erg_quadrat").innerHTML = "Ergebnis = " + text;
 }
@@ -75,7 +102,9 @@ function myFunction(operator) {
   }
   document.getElementById("erg").innerHTML = "Ergebnis = " + text;
 }
+
 </script>
 </body>
 </html>
+
 
